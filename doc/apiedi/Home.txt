@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2010-07-08T18:39:31.256253
+
+====== Home ======
+Created Thursday 08 July 2010
+
+* [[Schema degli URL]]
+* [[Database]]

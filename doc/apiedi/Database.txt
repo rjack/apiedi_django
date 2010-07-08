@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2010-07-08T18:47:51.430539
+
+====== Database ======
+Created Thursday 08 July 2010
+
+===== Entità =====
+
+* Appuntamento
+	* id datetime
+	* tipo di visita
+	* foreign key Paziente
+	* note
+* Paziente
+	* id auto
+	* nome
+	* cognome
+	* numero di telefono
+	* note
