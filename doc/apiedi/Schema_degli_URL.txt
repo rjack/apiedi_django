@@ -5,6 +5,5 @@ Creation-Date: 2010-07-08T18:40:36.257351
 ====== Schema degli URL ======
 Created Thursday 08 July 2010
 
-* GET /calendario, mostra un calendario dei giorni [[Views:Calendario]]
-* GET /yyyy-mm-dd, mostra l'agenda di quel giorno [[Views:Giorno]]
-* POST /yyyy-mm-dd, per salvare l'agenda del giorno
+* GET /appointments/, mostra gli appuntamenti della settimana [[Views:Appointments]]
+* POST /appointments/new, per salvare un nuovo appuntamento

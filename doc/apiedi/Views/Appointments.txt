@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2010-07-09T23:36:16.704186
+
+====== Appointments ======
+Created Friday 09 July 2010
+
+View che mostra gli appuntamenti.
+
+Parametri in query string:
+
+* from: specifica il primo giorno dell'intervallo di tempo a cui devono appartenere gli appuntamenti da mostrare 
+* to: specifica l'ultimo giorno dell'intervallo di tempo a cui devono appartenere gli appuntamenti da mostrare

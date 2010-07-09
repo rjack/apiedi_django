@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2010-07-08T23:25:38.743235
-
-====== Giorno ======
-Created Thursday 08 July 2010
-
-Questa view mostra gli appuntamenti di un dato giorno.
