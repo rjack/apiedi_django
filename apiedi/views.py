@@ -1,7 +1,14 @@
+from django.template import Context, loader
 from django.http import HttpResponse
+from models import Appointment
 
 def appointments(req):
-	return HttpResponse("Tutti gli appuntamenti")
+	appointments = Appointment.objects.all().order_by("time");
+	template = loader.get_template("appointments.html")
+	context = Context({
+		"appointments": appointments
+	})
+	return HttpResponse(template.render(context))
 
 
 def new_appointment(req):
