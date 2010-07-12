@@ -19,6 +19,7 @@ class Patient(models.Model):
 
 class Appointment(models.Model):
 	time = models.DateTimeField(primary_key=True)
+	duration = models.PositiveIntegerField()
 	visitType = models.CharField(max_length=1, choices=VISIT_TYPES)
 	patient = models.ForeignKey(Patient)
 	notes = models.CharField(max_length=500, blank=True, null=True)
