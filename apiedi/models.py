@@ -4,6 +4,7 @@ VISIT_TYPES = (
 	("v", "visita"),
 	("c", "controllo di crescita"),
 	("n", "neonato (prima visita)"),
+	("C", "consulto"),
 )
 
 class Patient(models.Model):
