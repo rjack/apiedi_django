@@ -1,0 +1,9 @@
+{% if appointments %}
+	<ul>
+		{% for app in appointments %}
+			<li>{{ app }}</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No polls are available.</p>
+{% endif %}
