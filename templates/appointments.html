@@ -1,9 +1,36 @@
-{% if appointments %}
-	<ul>
-		{% for app in appointments %}
-			<li>{{ app }}</li>
-		{% endfor %}
-	</ul>
-{% else %}
-	<p>No polls are available.</p>
-{% endif %}
+{% extends "apiedi_layout.html" %}
+
+{% block head-title %}Appuntamenti{% endblock %}
+
+{% block page %}
+	<table>
+		<thead>
+			<tr>
+				<th>Ora</th>
+				<th>Paziente</th>
+				<th>Tipo</th>
+				<th>Durata</th>
+				<th>Note</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if appointments %}
+				{% for app in appointments %}
+					<tr>
+						<td>{{ app.time|time:"H.i"}}</td>
+						<td>{{ app.patient }}</td>
+						{# questa roba fa schifo, bisogna che VISIT_TYPES venga passato al
+						template #}
+						<td>{% if app.visitType == "v" %}visita
+								{% else %}{% if app.visitType == "c" %}controllo
+								{% else %}{% if app.visitType == "n" %}neonato
+								{% else %}{% if app.visitType == "C" %}consulto
+								{% endif %}{% endif %}{% endif %}{% endif %}</td>
+						<td>{{ app.duration }}</td>
+						<td>{{ app.notes }}</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+{% endblock page %}
