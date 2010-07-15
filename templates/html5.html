@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% block head-title %}HEAD TITLE{% endblock %}</title>
+		{% block head-css %}{% endblock %}
+	</head>
+
+	<body>
+		{% block header %}<header>{% block header-content %}{% endblock %}</header>{% endblock %}
+		{% block nav %}<nav>{% block nav-content %}{% endblock %}</nav>{% endblock %}
+		{% block article %}<article>{% block article-content %}{% endblock %}</article>{% endblock %}
+		{% block aside %}<aside>{% block aside-content %}{% endblock %}</aside>{% endblock %}
+
+		{% block scripts %}{% endblock %}
+	</body>
+</html>
