@@ -1,0 +1,16 @@
+{% extends "html5.html" %}
+
+{% block head-css %}
+{% endblock %}
+
+{% block header %}<h1>APIEDI</h1>{% endblock %}
+
+{% block nav %}
+	<ul>
+		<li><a href="{% url apiedi_django.apiedi.views.appointments %}">appuntamenti</a></li>
+	</ul>
+{% endblock %}
+
+{% block article %}
+	<div>{% block page %}{% endblock %}</div>
+{% endblock article %}
