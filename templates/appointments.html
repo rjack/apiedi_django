@@ -3,32 +3,37 @@
 {% block head-title %}Appuntamenti{% endblock %}
 
 {% block page %}
-	<table>
-		<thead>
-			<tr>
-				<th>Ora</th>
-				<th>Paziente</th>
-				<th>Tipo</th>
-				<th>Durata</th>
-				<th>Note</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% if appointments %}
-				{% for app in appointments %}
+
+	{% if appointments %}
+		{% regroup appointments by time|date:"D d M Y" as day_list %}
+		{% for day in day_list %}
+			<h2>{{ day.grouper }}</h2>
+			<table>
+				<thead>
 					<tr>
-						<td>{{ app.time|time:"H.i"}}</td>
-						<td>{{ app.patient }}</td>
-						<td>{% if app.visitType == "v" %}visita
-							{% else %}{% if app.visitType == "c" %}controllo
-							{% else %}{% if app.visitType == "n" %}neonato
-							{% else %}{% if app.visitType == "C" %}consulto
-							{% endif %}{% endif %}{% endif %}{% endif %}</td>
-						<td>{{ app.duration }}</td>
-						<td>{{ app.notes }}</td>
+						<th>Ora</th>
+						<th>Paziente</th>
+						<th>Tipo</th>
+						<th>Durata</th>
+						<th>Note</th>
 					</tr>
-				{% endfor %}
-			{% endif %}
-		</tbody>
-	</table>
+				</thead>
+				<tbody>
+					{% for app in day.list %}
+						<tr>
+							<td>{{ app.time|time:"H.i"}}</td>
+							<td>{{ app.patient }}</td>
+							<td>{% if app.visitType == "v" %}visita
+								{% else %}{% if app.visitType == "c" %}controllo
+								{% else %}{% if app.visitType == "n" %}neonato
+								{% else %}{% if app.visitType == "C" %}consulto
+								{% endif %}{% endif %}{% endif %}{% endif %}</td>
+							<td>{{ app.duration }}</td>
+							<td>{{ app.notes }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endfor %}
+	{% endif %}
 {% endblock page %}
