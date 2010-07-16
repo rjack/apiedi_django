@@ -22,10 +22,10 @@
 						{# questa roba fa schifo, bisogna che VISIT_TYPES venga passato al
 						template #}
 						<td>{% if app.visitType == "v" %}visita
-								{% else %}{% if app.visitType == "c" %}controllo
-								{% else %}{% if app.visitType == "n" %}neonato
-								{% else %}{% if app.visitType == "C" %}consulto
-								{% endif %}{% endif %}{% endif %}{% endif %}</td>
+							{% else %}{% if app.visitType == "c" %}controllo
+							{% else %}{% if app.visitType == "n" %}neonato
+							{% else %}{% if app.visitType == "C" %}consulto
+							{% endif %}{% endif %}{% endif %}{% endif %}</td>
 						<td>{{ app.duration }}</td>
 						<td>{{ app.notes }}</td>
 					</tr>
